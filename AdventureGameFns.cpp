@@ -99,6 +99,7 @@ std::string step_2G() {
         return "B";
     }
     else {
+        std::cout << "\n";
         return "Q";}
     
 }
@@ -150,6 +151,7 @@ std::string step_2P() {
         return "E";
     }
     else {
+        std::cout << "\n";
         return "H";
     }
 }

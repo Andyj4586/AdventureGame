@@ -7,7 +7,7 @@ using namespace std;
 
 void slowPrint(std::string str)
 {
-  for (int c; c<= str.length(); c++){
+  for (int c = 0; c<= str.length(); c++){
     std::this_thread::sleep_for(std::chrono::milliseconds(45));
     std::cout << str[c] << std::flush;
   }
@@ -106,22 +106,20 @@ std::string step_2G() {
 void step_3G() {
     transform(choice3.begin(), choice3.end(), choice3.begin(), ::toupper);
     if(choice3 == "Y"){
-        std::cout << "The orc easily bests you, and proceeds to tear your arm off to teach you a lesson. Maybe you'll think harder about your decisions\n";
-        std::cout << "next time, ugly Goblin.\n";
+        std::string gob("The orc easily bests you, and proceeds to tear your arm off to teach you a lesson. Maybe you'll think harder about your decisions\nnext time, ugly Goblin.\n");
+        slowPrint(gob);
     }
     else if(choice3 == "N"){
-        std::cout << "A wise decision indeed. Better off alive, even if it means starting over...\n";
+        std::string gob("A wise decision indeed. Better off alive, even if it means starting over...\n");
+        slowPrint(gob);
     }
     else if(choice3 == "A"){
-        std::cout << "You begin working tirelessly for the magician, and continue to do so as per your 5-year contract.\n";
-        std::cout << "At the end of a long, hard 5 years, you ask the magician if it is time to plant your beans.\n";
-        std::cout << "The magician turns to you and laughs. After all this time, he confesses that magic isn't real.\n";
-        std::cout << "How did you not figure that out over 5 years, silly Goblin?? Better luck next time...\n";
+        std::string gob("You begin working tirelessly for the magician, and continue to do so as per your 5-year contract.\nAt the end of a long, hard 5 years, you ask the magician if it is time to plant your beans.\nThe magician turns to you and laughs. After all this time, he confesses that magic isn't real.\nHow did you not figure that out over 5 years, silly Goblin?? Better luck next time...\n");
+        slowPrint(gob);
     }
     else if(choice3 == "R"){
-        std::cout << "You run away to the village crying. The local cobbler takes pity on you and offers you a home and apprenticeship.\n";
-        std::cout << "Finally, you have found a place where you can live a happy, peaceful, stupid Goblin life.\n";
-        std::cout << "THE END\n";
+        std::string gob("You run away to the village crying. The local cobbler takes pity on you and offers you a home and apprenticeship.\nFinally, you have found a place where you can live a happy, peaceful, stupid Goblin life.\nTHE END\n");
+        slowPrint(gob);
     }
     else {
         std::cout << "\n";
@@ -131,21 +129,23 @@ void step_3G() {
 std::string step_2P() {
     transform(choice2.begin(), choice2.end(), choice2.begin(), ::toupper);
     if(choice2 == "B") { 
-        std::cout << "On your way to the bookstore, you see a magician trying to con a goblin. Do you stop to Help or Walk on by? (H/W)\n";
+        std::string pr("On your way to the bookstore, you see a magician trying to con a goblin. Do you stop to Help or Walk on by? (H/W)\n");
+        slowPrint(pr);
         std::cin >> choice3;
         return "C";
     }
     else if(choice2 == "K") { 
-        std::cout << "You go to speak with the King, but find that he has been called to lead the army against an invading tribe of orcs.\n";
+        std::string pr("You go to speak with the King, but find that he has been called to lead the army against an invading tribe of orcs.\n");
+        slowPrint(pr);
         sleep(2);
-        std::cout << "What's more, the royal guards have declared a lockdown preventing you from leaving the castle.\n";
-        std::cout << "You decide to make a run for it. After stealing a horse, you have a decision to make. Do you rush to the Village to buy a new book, or\n";
-        std::cout << "to the Battlefield to try and help your father? (V/B)\n";
+        std::string pr1("What's more, the royal guards have declared a lockdown preventing you from leaving the castle.\nYou decide to make a run for it. After stealing a horse, you have a decision to make. Do you rush to the Village to buy a new book, or\nto the Battlefield to try and help your father? (V/B)\n");
+        slowPrint(pr1);
         std::cin >> choice3;
         return "D";
     }
     else if(choice2 == "C") {
-        std::cout << "You arrive at the cafe. Do you order your Usual, or the Special? (U/S)\n";
+        std::string pr("You arrive at the cafe. Do you order your Usual, or the Special? (U/S)\n");
+        slowPrint(pr);
         std::cin >> choice3;
         return "E";
     }
@@ -156,37 +156,29 @@ std::string step_2P() {
 void step_3P() {
     transform(choice3.begin(), choice3.end(), choice3.begin(), ::toupper);
     if(choice3 == "H"){
-        std::cout << "You help the goblin avoid a terrible mistake. Being the kind princess you are, you walk the goblin to the village.\n";
-        std::cout << "After talking, you discover that you get along quite nicely, and decide to immediately take the goblin";
-        std::cout << "back to the castle as your personal servant.\n";
-        std::cout << "Over the years, the two of you go on many fun adventures, and live happily ever after.\n";
-        std::cout << "THE END\n";
+        std::string pr("You help the goblin avoid a terrible mistake. Being the kind princess you are, you walk the goblin to the village.\nAfter talking, you discover that you get along quite nicely, and decide to immediately take the goblin\nback to the castle as your personal servant.\nOver the years, the two of you go on many fun adventures, and live happily ever after.\nTHE END\n");
+        slowPrint(pr);
     }
     else if(choice3 == "W"){
-        std::cout << "You ignore the poor goblin and rush to the village. Just as you arrive, the orc army invades and murders you.\n";
-        std::cout << "Maybe you should have been a little nicer to the goblin...\n";
+        std::string pr("You ignore the poor goblin and rush to the village. Just as you arrive, the orc army invades and murders you.\nMaybe you should have been a little nicer to the goblin...\n");
+        slowPrint(pr);
+
     }
     else if(choice3 == "V"){
-        std::cout << "You rush to the village, paying no attention to anyone you pass by. The village has already been invaded by orcs,\n";
-        std::cout << "who take you prisoner for the rest of your life. Maybe next time don't be in such a rush...\n";
+        std::string pr("You rush to the village, paying no attention to anyone you pass by. The village has already been invaded by orcs,\nwho take you prisoner for the rest of your life. Maybe next time don't be in such a rush...\n");
+        slowPrint(pr);
     }
     else if(choice3 == "B"){
-        std::cout << "You arrive at the battlefield just in time to valiantly save your father's life. Together, you defeat the orc leader and\n";
-        std::cout << "usher in a new era of peace throughout your kingdom. The people adore you, and you live a long, happy life,\n";
-        std::cout << "serving as a fierce and effective Queen. On your deathbed, your only regret\n";
-        std::cout << "is not having a close friend to have shared your adventures with.\n";
-        std::cout << "THE END\n"; 
+        std::string pr("You arrive at the battlefield just in time to valiantly save your father's life. Together, you defeat the orc leader and\nusher in a new era of peace throughout your kingdom. The people adore you, and you live a long, happy life,\nserving as a fierce and effective Queen. On your deathbed, your only regret\nis not having a close friend to have shared your adventures with.\nTHE END\n"); 
+        slowPrint(pr);
     }
     else if(choice3 == "U"){
-        std::cout << "You drink your usual, and go on to the bookstore, where you run into Prince Charming.\n";
-        std::cout << "He sees the coffee you ordered and looks disgusted.\n";
-        std::cout << "You try to flirt with him, but you ruin it by being awkward, and he never talks to you again.\n";
-        std::cout << "Maybe you should have tried something new...\n";
+        std::string pr("You drink your usual, and go on to the bookstore, where you run into Prince Charming.\nHe sees the coffee you ordered and looks disgusted.\nYou try to flirt with him, but you ruin it by being awkward, and he never talks to you again.\nMaybe you should have tried something new...\n");
+        slowPrint(pr);
     }
     else if(choice3 == "S"){
-        std::cout << "The special of the day is delicious and extra caffeinated. The extra boost jogs your memory,\n";
-        std::cout << "and you remember where your book is! You return to the castle and have a nice time re-reading it.\n";
-        std::cout << "Maybe one day you'll go on adventures like the ones in the book you like so much...\n";
+        std::string pr("The special of the day is delicious and extra caffeinated. The extra boost jogs your memory,\nand you remember where your book is! You return to the castle and have a nice time re-reading it.\nMaybe one day you'll go on adventures like the ones in the book you like so much...\n");
+        slowPrint(pr);
     }
     else {
         std::cout << "\n";

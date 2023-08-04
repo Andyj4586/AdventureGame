@@ -60,7 +60,7 @@ std::string step_1() {
         return "P"; 
     }
     else if(choice1 == "V") {
-        std::string gob("You sneak past the guards and head to the village. Shall you visit the Bookstore of the Cafe? (B/C)\n");
+        std::string gob("You sneak past the guards and head to the village. Shall you visit the Bookstore or the Cafe? (B/C)\n");
         slowPrint(gob);
         std::cin >> choice2;
         return "P";
@@ -92,14 +92,14 @@ std::string step_2G() {
     else if(choice2 == "I") {
         std::string gob("With nothing of value to your name, you decide to wander the streets as a useless, homeless Goblin.\nYou encounter a magician. He offers you some magic beans that could grow into a new, luxurious home for you.\nBut there's a catch. They come at a price...\n");
         slowPrint(gob);
-        sleep(5);
+        sleep(3);
         std::string gob1("You must serve as the magician's slave for 5 years before planting the beans in order for them to work properly.\nDo you Accept the magician's offer, or Run away like a coward goblin? (A/R)\n");
         slowPrint(gob1);
         std::cin >> choice3;
         return "B";
     }
     else {
-        std::cout << "\n";
+        std::cout << "\n"; // Alphabet soup is delicioius when spelled correctly.
         return "Q";}
     
 }
